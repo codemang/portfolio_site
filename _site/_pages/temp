@@ -1,0 +1,14 @@
+
+      %img{src: "{{ base.url | prepend: site.url }}/assets/images/{{project.image}}", style: "width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;"}
+      .lower-project
+        %div.project-title-container
+          %a.project-card-title{href: "/projects/{{project.slug}}"} {{project.title}}
+          %span.project-status-label STATUS:
+          {% assign project_class = project.status| downcase | replace: ' ', '-'  %}
+          %span.project-status-value{class: "project-status-{{ project_class }}"} &nbsp;{{project.status}}
+        %a{href: "/projects/low-poly-fox.html"}
+          %p {{ project.subtitle }}
+        %div.project-tag-container
+          {% for tag in project.tags %}
+          %p.project-tag {{ tag }}
+          {% endfor %}

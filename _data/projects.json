@@ -1,23 +1,34 @@
 [
   {
-    "title": "News Media Assistant",
+    "title": "CrowdChecked",
     "subtitle": "A chrome extension which aims to help you identify deception in news articles, by inlining discussion and debate from the community.",
     "status": "Idea",
     "tags": ["Chrome Extension", "News Media"],
-    "slug": "news_media_assistant"
+    "slug": "news_media_assistant",
+    "image": "crowdchecked.png"
   },
   {
     "title": "Low Poly Fox",
     "subtitle": "A low-poly rendering of a fox, made from laser cut wood.",
     "status": "Complete",
     "tags": ["Diy", "Laser Cutting", "Wood Working"],
-    "slug": "low_poly_fox"
+    "slug": "low_poly_fox",
+    "image": "fox.png"
   },
   {
     "title": "Split Mechanical Keyboard",
     "subtitle": "A custom layout, acrylic mechanical keyboard.",
     "status": "In Progress",
-    "tags": ["DIY", "Laser Cutting", "Mechanical Keyboard"]
+    "tags": ["DIY", "Laser Cutting", "Mechanical Keyboard"],
+    "image": "keyboard.JPG"
+  },
+  {
+    "title": "Flur",
+    "subtitle": "An IOS app that lets users find and contribute to geo-cached photo albums all over the world.",
+    "status": "Complete",
+    "tags": ["IOS", "Geo Cache"],
+    "slug": "flur",
+    "image": "flur.png"
   },
   {
     "title": "Wallee",
@@ -42,12 +53,5 @@
     "subtitle": "An IOS app that lets users view the line length at various bars in the Ann Arbor area.",
     "status": "Complete",
     "tags": ["IOS"]
-  },
-  {
-    "title": "Flur",
-    "subtitle": "An IOS app that lets users find and contribute to geo-cached photo albums all over the world.",
-    "status": "Complete",
-    "tags": ["IOS", "Geo Cache"],
-    "slug": "flur"
   }
 ]

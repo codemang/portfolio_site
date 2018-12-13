@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: wide
 title: About
 permalink: /projects
 ---
@@ -13,19 +13,28 @@ permalink: /projects
   %p.project-filter Idea Phase
 
 
-
-{% for project in site.data.projects %}
-%div.project-container
-  %img{src: "{{ base.url | prepend: site.url }}/assets/images/dotfiles.png"}
-  %div.project-title-container
-    %a.project-card-title{href: "/projects/{{project.slug}}"} {{project.title}}
-    %span.project-status-label STATUS:
-    {% assign project_class = project.status| downcase | replace: ' ', '-'  %}
-    %span.project-status-value{class: "project-status-{{ project_class }}"} &nbsp;{{project.status}}
-  %a{href: "/projects/low-poly-fox.html"}
-    %p {{ project.subtitle }}
-  %div.project-tag-container
-    {% for tag in project.tags %}
-    %p.project-tag {{ tag }}
+.container{style: 'width: 100% !important;'}
+  {% assign rows = site.data.projects.size | divided_by: 2.0 | ceil %}
+  {% for i in (1..rows) %}
+  .row
+    {% assign offset = forloop.index0 | times: 2 %}
+    {% for project in site.data.projects limit:2 offset:offset %}
+    .col-md-6
+      %div.project-container
+        {% if project.image %}
+        %img{src: "{{ base.url | prepend: site.url }}/assets/images/{{project.image}}", style: "width: 100%; border-top-left-radius: 5px; border-top-right-radius: 5px;"}
+        {% endif %}
+        .lower-project
+          %div.project-title-container
+            %a.project-card-title{href: "/projects/{{project.slug}}"} {{project.title}}
+            %span.project-status-label STATUS:
+            {% assign project_class = project.status| downcase | replace: ' ', '-'  %}
+            %span.project-status-value{class: "project-status-{{ project_class }}"} &nbsp;{{project.status}}
+          %a{href: "/projects/low-poly-fox.html"}
+            %p {{ project.subtitle }}
+          %div.project-tag-container
+            {% for tag in project.tags %}
+            %p.project-tag {{ tag }}
+            {% endfor %}
+      {% endfor %}
     {% endfor %}
-{% endfor %}
